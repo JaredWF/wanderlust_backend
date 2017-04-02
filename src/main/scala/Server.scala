@@ -17,6 +17,7 @@ object BlazeExample extends ServerApp {
     BlazeBuilder
       .bindHttp(port, ip)
       .mountService(HelloWorld.service)
+      .mountService(ActivitiesService.service, "/api")
       .withServiceExecutor(pool)
       .start
 }
